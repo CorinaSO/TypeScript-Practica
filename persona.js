@@ -58,12 +58,32 @@ var Persona = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    Object.defineProperty(Persona.prototype, "cumplea\u00F1os", {
+        get: function () {
+            return this._cumpleaños;
+        },
+        set: function (s) {
+            this._cumpleaños = s;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Object.defineProperty(Persona.prototype, "color", {
         get: function () {
             return this._color;
         },
         set: function (s) {
             this._color = s;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Persona.prototype, "notas", {
+        get: function () {
+            return this._notas;
+        },
+        set: function (s) {
+            this._notas = s;
         },
         enumerable: false,
         configurable: true

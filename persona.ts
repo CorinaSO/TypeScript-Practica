@@ -59,12 +59,27 @@ export abstract class Persona {
         return this._dni;
     }
 
+    public set cumpleaños(s:string){
+        this._cumpleaños=s;
+    }
+    public get cumpleaños():string{
+        return this._cumpleaños;
+    }
+
     public set color(s:string){
         this._color=s;
     }
     public get color():string{
         return this._color;
     }
+
+    public set notas(s:string){
+        this._notas=s;
+    }
+    public get notas():string{
+        return this._notas;
+    }
+    
     //Métodos para direcciones
     public anotarDireccion(unaDireccion:Direccion){
         this._direcciones.push(unaDireccion);
