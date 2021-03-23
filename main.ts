@@ -17,6 +17,8 @@ contacto=miAgenda.buscarContactoDNI('95111265M');
 if (contacto==undefined){
     console.log("No se ha encontrado el contacto");
 } else {
+    //se añade una variante que sería introducir más de una dirección sobre el contacto localizado,
+    //una incorrecta y la correcta y se elimina la incorrecta indicando la calle a borrar.
     let nuevaDireccion=new Direccion('San Diego de Alaca',16,'Bajo','',35002,'Las Palmas de GC','Las Palmas');
     contacto.anotarDireccion(nuevaDireccion);
     nuevaDireccion=new Direccion('San Diego de Alcalá',16,'Bajo','',35002,'Las Palmas de GC','Las Palmas');

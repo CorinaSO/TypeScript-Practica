@@ -81,14 +81,17 @@ export abstract class Persona {
     }
     
     //Métodos para direcciones
+    //se utiliza pasando una Direccion
     public anotarDireccion(unaDireccion:Direccion){
         this._direcciones.push(unaDireccion);
     }
 
+    //eliminar indicando posicion dentro del array
     public eliminarDireccion(posicion:number){
         this._direcciones.splice(posicion,1);
     }
 
+    //eliminar indicando la calle
     public eliminarDireccionxCalle(calle:string):void{
         let posicionEliminar=-1;
         for(var i = 0;i<this._direcciones.length;i++) { 
@@ -102,22 +105,25 @@ export abstract class Persona {
         }
     }
 
+    //devuleve un objeto Direccion
     public devolverDireccion(posicion:number):Direccion{
       return this._direcciones[posicion];  
     }
 
+    //ver una dirección indicando la posicion dentro del array
     public verUnaDireccion(posicion:number):void{
         let direccion:Direccion=this._direcciones[posicion];
         direccion.mostrarDireccion();
     }
 
+    //ver todas las direcciones del array recorriendo éste
     public verTodasDirecciones():void{
         for(let direccion of this._direcciones){
             direccion.mostrarDireccion();
         }
     }
 
-    //Métodos para emails
+    //Métodos para emails, se podrían implementar más métodos como podría ser elimminar un mail 
     public anotarEmail(unEmail:Email){
         this._mails.push(unEmail);
     }
@@ -137,7 +143,9 @@ export abstract class Persona {
         }
     }
 
-    //Métodos para teléfonos
+    //Métodos para teléfonos, se podrían implementar más métodos como podría ser eliminar un teléfono
+    //variante de como añadir un objeto en este caso en vez de pasar un objeto Telefono
+    //pasamos el tipo y el número y dentro del método cramos el objeto Telefono
     public anotarTelefono(t:string,n:number){
         var telefono=new Telefono(t,n);
         this._telefonos.push(telefono);
@@ -157,6 +165,7 @@ export abstract class Persona {
         }
     }
 
+    //Método que nos muestra los datos de una persona
     public verDatoPersona():void{
         console.log("******************** Datos de Contacto ********************")
         console.log("Nombre: "+this._nombre+ " Apellidos: "+this._apellidos+" Edad: "+this._edad);

@@ -89,12 +89,15 @@ var Persona = /** @class */ (function () {
         configurable: true
     });
     //Métodos para direcciones
+    //se utiliza pasando una Direccion
     Persona.prototype.anotarDireccion = function (unaDireccion) {
         this._direcciones.push(unaDireccion);
     };
+    //eliminar indicando posicion dentro del array
     Persona.prototype.eliminarDireccion = function (posicion) {
         this._direcciones.splice(posicion, 1);
     };
+    //eliminar indicando la calle
     Persona.prototype.eliminarDireccionxCalle = function (calle) {
         var posicionEliminar = -1;
         for (var i = 0; i < this._direcciones.length; i++) {
@@ -107,20 +110,23 @@ var Persona = /** @class */ (function () {
             this._direcciones.splice(posicionEliminar, 1);
         }
     };
+    //devuleve un objeto Direccion
     Persona.prototype.devolverDireccion = function (posicion) {
         return this._direcciones[posicion];
     };
+    //ver una dirección indicando la posicion dentro del array
     Persona.prototype.verUnaDireccion = function (posicion) {
         var direccion = this._direcciones[posicion];
         direccion.mostrarDireccion();
     };
+    //ver todas las direcciones del array recorriendo éste
     Persona.prototype.verTodasDirecciones = function () {
         for (var _i = 0, _a = this._direcciones; _i < _a.length; _i++) {
             var direccion = _a[_i];
             direccion.mostrarDireccion();
         }
     };
-    //Métodos para emails
+    //Métodos para emails, se podrían implementar más métodos como podría ser elimminar un mail 
     Persona.prototype.anotarEmail = function (unEmail) {
         this._mails.push(unEmail);
     };
@@ -137,7 +143,9 @@ var Persona = /** @class */ (function () {
             unEmail.mostrarEmail();
         }
     };
-    //Métodos para teléfonos
+    //Métodos para teléfonos, se podrían implementar más métodos como podría ser eliminar un teléfono
+    //variante de como añadir un objeto en este caso en vez de pasar un objeto Telefono
+    //pasamos el tipo y el número y dentro del método cramos el objeto Telefono
     Persona.prototype.anotarTelefono = function (t, n) {
         var telefono = new telefono_1.Telefono(t, n);
         this._telefonos.push(telefono);
@@ -156,6 +164,7 @@ var Persona = /** @class */ (function () {
             unTelefono.mostrarTelefono();
         }
     };
+    //Método que nos muestra los datos de una persona
     Persona.prototype.verDatoPersona = function () {
         console.log("******************** Datos de Contacto ********************");
         console.log("Nombre: " + this._nombre + " Apellidos: " + this._apellidos + " Edad: " + this._edad);
